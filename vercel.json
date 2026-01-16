@@ -1,15 +1,55 @@
 {
-  "buildCommand": "npm install",
+  "$schema": "https://vercel.com/schemas/vercel.json",
   "framework": null,
+  "buildCommand": "npm install && npm ci",
+  "installCommand": "npm install",
+  "devCommand": "node realtime-console/simple-server.js",
   "functions": {
     "api/index.js": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs18.x",
+      "memory": 1024,
+      "maxDuration": 60
     }
   },
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/api/:path*",
       "destination": "/api"
+    },
+    {
+      "source": "/vapi-voice.html",
+      "destination": "/vapi-voice.html"
+    },
+    {
+      "source": "/openai-voice.html",
+      "destination": "/openai-voice.html"
+    },
+    {
+      "source": "/hume-voice.html",
+      "destination": "/hume-voice.html"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/api/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
     }
   ],
   "env": [
