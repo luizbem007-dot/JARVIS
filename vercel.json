@@ -1,0 +1,20 @@
+{
+  "buildCommand": "npm install",
+  "framework": null,
+  "functions": {
+    "api/index.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ],
+  "env": [
+    "OPENAI_API_KEY",
+    "HUME_API_KEY",
+    "HUME_CLIENT_SECRET"
+  ]
+}

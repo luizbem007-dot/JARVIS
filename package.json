@@ -1,20 +1,39 @@
 {
-  "name": "logos-lab",
+  "name": "logos-protocol",
   "version": "1.0.0",
-  "main": "index.ts",
+  "description": "LOGOS Protocol - 3 Premium AI Voice Systems",
+  "type": "module",
+  "main": "api/index.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "start": "node realtime-console/simple-server.js",
+    "dev": "node api/index.js",
     "web": "expo start --web"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
+    "@vapi-ai/web": "^2.5.2",
+    "express": "^4.18.2",
+    "dotenv": "^16.0.3",
     "expo": "~54.0.30",
+    "expo-constants": "~18.0.12",
+    "expo-linking": "~8.0.11",
+    "expo-router": "~6.0.21",
     "expo-status-bar": "~3.0.9",
+    "nativewind": "^4.2.1",
     "react": "19.1.0",
-    "react-native": "0.81.5"
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-screens": "~4.16.0",
+    "react-native-web": "^0.21.0",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.10.6",
     "@types/react": "~19.1.0",
     "typescript": "~5.9.2"
   },
