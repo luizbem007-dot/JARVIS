@@ -51,10 +51,5 @@
         }
       ]
     }
-  ],
-  "env": [
-    "OPENAI_API_KEY",
-    "HUME_API_KEY",
-    "HUME_CLIENT_SECRET"
   ]
 }
